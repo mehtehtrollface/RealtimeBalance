@@ -1,0 +1,49 @@
+{
+  "unit": {
+    "MOBAMonster": {
+      "hppl": 50.0,
+      "bhp": 550.0,
+      "bad": 10.0,
+      "adpl": 1.0,
+      "bms": 500.0,
+      "bar": 20.0,
+      "arpl": 0.0,
+      "bas": 100.0,
+      "aspl": 2.0,
+      "bmr": 20.0,
+      "mrpl": 0.0,
+      "bhr": 1.4,
+      "hrpl": 0.1
+    },
+    "ShinbiTest": {
+      "hppl": 50.0,
+      "bhp": 450.0,
+      "bad": 100.0,
+      "adpl": 1.0,
+      "bms": 500.0,
+      "bar": 20.0,
+      "arpl": 0.0,
+      "bas": 100.0,
+      "aspl": 2.0,
+      "bmr": 20.0,
+      "mrpl": 0.0,
+      "bhr": 1.4,
+      "hrpl": 0.1
+    },
+    "RogueMob": {
+      "hppl": 50.0,
+      "bhp": 350.0,
+      "bad": 20.0,
+      "adpl": 1.0,
+      "bms": 500.0,
+      "bar": 20.0,
+      "arpl": 0.0,
+      "bas": 60.0,
+      "aspl": 2.0,
+      "bmr": 20.0,
+      "mrpl": 0.0,
+      "bhr": 1.4,
+      "hrpl": 0.1
+    }
+  }
+}
