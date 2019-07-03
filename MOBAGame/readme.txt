@@ -1,8 +1,10 @@
+If you have Shoes installed (shoesrb.com) you can run the GUI version from editjson_shoes.rb instead of using the command line.
+
 editjson.rb commands:
 
 addunit <name> - Adds a unit to the JSON, the name of the unit is case sensitive with the project class!
 
-removeunit <name> - Removes a unit from the JSON, making it default to the "hardcoded" project settings.
+removeunit <name> - Removes a unit from the JSON, making it default to the "hardcoded" project settings. 
 
 changestat <unit> <stat> <value> - Changes a unit's default stat to the specified value. Stat reference at the bottom of this file.
 
