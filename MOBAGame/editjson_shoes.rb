@@ -47,6 +47,7 @@ end
 def add_unit(name, eu, jf)
 	jf["unit"][name] = eu
 	return jf
+	alert "Added unit " + name
 end
 
 
@@ -60,13 +61,13 @@ end
 
 
 
-
+saved=true
 
 selectedunit = "yeet"
 
 templist = update_templist js
 
-Shoes.app(title: "MOBAGame Realtime Balance", width: 1200, height: 600) do
+Shoes.app(title: "MOBAGame Realtime Balance", width: 800, height: 600) do
 	
 
 	
@@ -74,15 +75,41 @@ Shoes.app(title: "MOBAGame Realtime Balance", width: 1200, height: 600) do
 
 	stack(margin:8) do
 	
-		change = false
+		
 		flow(margin:8) do
-			@saveb = button "Save changes", size:50
+			@saveb = button "Save JSON", size:50
 			para "Add a new unit: "
 			@newunitl = edit_line(width:120)
 			@addunitb = button "Add"
+			@warningpara = para " ", stroke: red
 		end
 		
-
+		#@unsaved = para " ", stroke: red
+		
+		def update_save code
+		
+			# Change was made
+			if code == 0
+				saved = false
+			end
+			
+			# Unit was changed
+			if code == 1
+				if saved 
+					
+				end
+			end
+			
+			# JSON was saved
+			if code == 2
+				
+			end
+			if saved 
+				@unsaved.text = " "
+			else
+				@unsaved.text = "You have unsaved changes!"
+			end
+		end
 		
 		flow do
 			para "Unit: "
@@ -230,6 +257,7 @@ Shoes.app(title: "MOBAGame Realtime Balance", width: 1200, height: 600) do
 		#When a new unit is selected, change displayed stats
 		@unitselect.change do |selection|
 			selectedunit = selection.text
+			
 			@bhpl.text = js["unit"][selectedunit]["bhp"]
 			@badl.text = js["unit"][selectedunit]["bad"]
 			@barl.text = js["unit"][selectedunit]["bar"]
@@ -248,10 +276,184 @@ Shoes.app(title: "MOBAGame Realtime Balance", width: 1200, height: 600) do
 			@brrl.text = js["unit"][selectedunit]["brr"]
 			@respll.text = js["unit"][selectedunit]["respl"]
 			@rrpll.text = js["unit"][selectedunit]["rrpl"]
+			
 		end
 
 		
+		@bhpl.change do |block|
+			tmpf = block.text.to_f
+			if tmpf == 0
+				@warningpara.text = "Warning! You are setting a 0 value!"
+			else
+				@warningpara.text = " "
+			end
+			js["unit"][selectedunit]["bhp"] = tmpf
+		end
 		
+		@badl.change do |block|
+			tmpf = block.text.to_f
+			if tmpf == 0
+				@warningpara.text = "Warning! You are setting a 0 value!"
+			else
+				@warningpara.text = " "
+			end
+			js["unit"][selectedunit]["bad"] = tmpf
+		end
+		
+		@barl.change do |block|
+			tmpf = block.text.to_f
+			if tmpf == 0
+				@warningpara.text = "Warning! You are setting a 0 value!"
+			else
+				@warningpara.text = " "
+			end
+			js["unit"][selectedunit]["bar"] = tmpf
+		end
+		
+		@bmrl.change do |block|
+			tmpf = block.text.to_f
+			if tmpf == 0
+				@warningpara.text = "Warning! You are setting a 0 value!"
+			else
+				@warningpara.text = " "
+			end
+			js["unit"][selectedunit]["bmr"] = tmpf
+		end
+		
+		@basl.change do |block|
+			tmpf = block.text.to_f
+			if tmpf == 0
+				@warningpara.text = "Warning! You are setting a 0 value!"
+			else
+				@warningpara.text = " "
+			end
+			js["unit"][selectedunit]["bas"] = tmpf
+		end
+		
+		@bhrl.change do |block|
+			tmpf = block.text.to_f
+			if tmpf == 0
+				@warningpara.text = "Warning! You are setting a 0 value!"
+			else
+				@warningpara.text = " "
+			end
+			js["unit"][selectedunit]["bhr"] = tmpf
+		end
+		
+		@bmsl.change do |block|
+			tmpf = block.text.to_f
+			if tmpf == 0
+				@warningpara.text = "Warning! You are setting a 0 value!"
+			else
+				@warningpara.text = " "
+			end
+			js["unit"][selectedunit]["bms"] = tmpf
+		end
+		
+		@hppll.change do |block|
+			tmpf = block.text.to_f
+			if tmpf == 0
+				@warningpara.text = "Warning! You are setting a 0 value!"
+			else
+				@warningpara.text = " "
+			end
+			js["unit"][selectedunit]["hppl"] = tmpf
+		end
+		
+		@adpll.change do |block|
+			tmpf = block.text.to_f
+			if tmpf == 0
+				@warningpara.text = "Warning! You are setting a 0 value!"
+			else
+				@warningpara.text = " "
+			end
+			js["unit"][selectedunit]["adpl"] = tmpf
+		end
+		
+		@arpll.change do |block|
+			tmpf = block.text.to_f
+			if tmpf == 0
+				@warningpara.text = "Warning! You are setting a 0 value!"
+			else
+				@warningpara.text = " "
+			end
+			js["unit"][selectedunit]["arpl"] = tmpf
+		end
+		
+		@mrpll.change do |block|
+			tmpf = block.text.to_f
+			if tmpf == 0
+				@warningpara.text = "Warning! You are setting a 0 value!"
+			else
+				@warningpara.text = " "
+			end
+			js["unit"][selectedunit]["mrpl"] = tmpf
+		end
+		
+		@aspll.change do |block|
+			tmpf = block.text.to_f
+			if tmpf == 0
+				@warningpara.text = "Warning! You are setting a 0 value!"
+			else
+				@warningpara.text = " "
+			end
+			js["unit"][selectedunit]["aspl"] = tmpf
+		end
+		
+		@hrpll.change do |block|
+			tmpf = block.text.to_f
+			if tmpf == 0
+				@warningpara.text = "Warning! You are setting a 0 value!"
+			else
+				@warningpara.text = " "
+			end
+			js["unit"][selectedunit]["hrpl"] = tmpf
+		end
+		
+		@rnamel.change do |block|
+			tmpf = block.text
+			js["unit"][selectedunit]["rname"] = tmpf
+		end
+		
+		@bresl.change do |block|
+			tmpf = block.text.to_f
+			if tmpf == 0
+				@warningpara.text = "Warning! You are setting a 0 value!"
+			else
+				@warningpara.text = " "
+			end
+			js["unit"][selectedunit]["bres"] = tmpf
+		end
+		
+		@brrl.change do |block|
+			tmpf = block.text.to_f
+			if tmpf == 0
+				@warningpara.text = "Warning! You are setting a 0 value!"
+			else
+				@warningpara.text = " "
+			end
+			js["unit"][selectedunit]["brr"] = tmpf
+		end
+		
+		@respll.change do |block|
+			tmpf = block.text.to_f
+			if tmpf == 0
+				@warningpara.text = "Warning! You are setting a 0 value!"
+			else
+				@warningpara.text = " "
+			end
+			js["unit"][selectedunit]["respl"] = tmpf
+		end
+		
+		@rrpll.change do |block|
+			tmpf = block.text.to_f
+			if tmpf == 0
+				@warningpara.text = "Warning! You are setting a 0 value!"
+			else
+				@warningpara.text = " "
+			end
+			js["unit"][selectedunit]["rrpl"] = tmpf
+		end
 		
 		
 		
@@ -274,6 +476,7 @@ Shoes.app(title: "MOBAGame Realtime Balance", width: 1200, height: 600) do
 		@saveb.click do
 			backup
 			save_changes js
+			@unsaved.text = " "
 		end
 		
 	end
