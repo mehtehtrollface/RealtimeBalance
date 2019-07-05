@@ -1,4 +1,4 @@
-If you have Shoes installed (shoesrb.com) you can run the GUI version from editjson_shoes.rb instead of using the command line.
+If you have Shoes installed (shoesrb.com) you can run the GUI version from run_gui.bat instead of using the command line.
 
 editjson.rb commands:
 
