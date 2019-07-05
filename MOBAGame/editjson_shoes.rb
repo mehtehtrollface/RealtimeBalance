@@ -19,7 +19,7 @@ end
 
 
 
-emptyunit = JSON.parse('{"hppl": 50.0,"bhp": 450.0,"bad": 50.0,"adpl": 1.0,"bms": 500.0,"bar": 20.0,"arpl": 0.0,"bas": 100.0,"aspl": 2.0,"bmr": 20.0,"mrpl": 0.0,"bhr": 1.4,"hrpl": 0.1}')
+emptyunit = JSON.parse('{"hppl": 50.0,"bhp": 450.0,"bad": 50.0,"adpl": 1.0,"bms": 500.0,"bar": 20.0,"arpl": 0.0,"bas": 100.0,"aspl": 2.0,"bmr": 20.0,"mrpl": 0.0,"bhr": 1.4,"hrpl": 0.1,"rname": "Mana","bres": 200.0,"brr": 5.0,"respl": 50.0,"rrpl": 0.5}')
 	
 	
 	
@@ -66,7 +66,7 @@ selectedunit = "yeet"
 
 templist = update_templist js
 
-Shoes.app(title: "MOBAGame Realtime Balance", width: 800, height: 600) do
+Shoes.app(title: "MOBAGame Realtime Balance", width: 1200, height: 600) do
 	
 
 	
@@ -82,31 +82,200 @@ Shoes.app(title: "MOBAGame Realtime Balance", width: 800, height: 600) do
 			@addunitb = button "Add"
 		end
 		
+
 		
 		flow do
 			para "Unit: "
-			@unitbox = list_box items: templist 
+			@unitselect = list_box items: templist, height: 20
 			@delunitb = button "Delete unit"
 		end
+		
+		para " "
+		
+		flow do 
+			#Base values
+			stack(width:300) do
+			
+				#Health Points
+				flow(margin:3) do
+					para "Base Health "
+					@bhpl = edit_line(width:60)
+				end
+				
+				#Attack Damage
+				flow(margin:3) do
+					para "Base Attack Damage "
+					@badl = edit_line(width:60)
+				end
+				
+				#Armor
+				flow(margin:3) do
+					para "Base Armor "
+					@barl = edit_line(width:60)
+				end
+				
+				#Magic Resist
+				flow(margin:3) do
+					para "Base Magic Resist "
+					@bmrl = edit_line(width:60)
+				end
+				
+				#Attack Speed
+				flow(margin:3) do
+					para "Base Attack Speed "
+					@basl = edit_line(width:60)
+				end
+				
+				#Health Regen
+				flow(margin:3) do
+					para "Base Health Regen "
+					@bhrl = edit_line(width:60)
+				end
+				
+				#Movement Speed
+				flow(margin:3) do
+					para "Base Movespeed "
+					@bmsl = edit_line(width:60)
+				end
+			end
+			
+			#Per level values
+			stack(width:300) do
+				#Health Points
+				flow(margin:3) do
+					para "Health per level "
+					@hppll = edit_line(width:60) 
+				end
+				
+				#Attack Damage
+				flow(margin:3) do
+					para "Attack Damage per level "
+					@adpll = edit_line(width:60) 
+				end
+				
+				#Armor
+				flow(margin:3) do
+					para "Armor per level "
+					@arpll = edit_line(width:60) 	
+				end
+				
+				#Magic Resist
+				flow(margin:3) do
+					para "MR per level "
+					@mrpll = edit_line(width:60) 
+				end
+				
+				#Attack Speed
+				flow(margin:3) do
+					para "AS per level "
+					@aspll = edit_line(width:60) 
+				end
+				
+				#Health Regen
+				flow(margin:3) do
+					para "HRegen per level "
+					@hrpll = edit_line(width:60) 
+				end
+			end
+		end
+		
+		
+		
+		para "Heroes only: "
+		
+		flow do 
+			#Base Values
+			stack(width:300) do
+			
+				#Resource Name
+				flow(margin:3) do
+					para "Resource Name "
+					@rnamel = edit_line(width:100)
+				end
+				
+				#Resource
+				flow(margin:3) do
+					para "Base Resource "
+					@bresl = edit_line(width:60)
+				end
+				
+				#Resource Regen
+				flow(margin:3) do
+					para "Base Resource Regen "
+					@brrl = edit_line(width:60)
+				end
+			end
+			
+			#Per Level
+			stack(width:300) do
+				para " "
+				
+				#Resource
+				flow(margin:3) do
+					para "Resource per level "
+					@respll = edit_line(width:60)
+				end
+				
+				#Resource Regen
+				flow(margin:3) do
+					para "RRegen per level "
+					@rrpll = edit_line(width:60)
+				end
+			end
+		end
+		
+		
+		
+		
+		#When a new unit is selected, change displayed stats
+		@unitselect.change do |selection|
+			selectedunit = selection.text
+			@bhpl.text = js["unit"][selectedunit]["bhp"]
+			@badl.text = js["unit"][selectedunit]["bad"]
+			@barl.text = js["unit"][selectedunit]["bar"]
+			@bmrl.text = js["unit"][selectedunit]["bmr"]
+			@basl.text = js["unit"][selectedunit]["bas"]
+			@bhrl.text = js["unit"][selectedunit]["bhr"]
+			@bmsl.text = js["unit"][selectedunit]["bms"]
+			@hppll.text = js["unit"][selectedunit]["hppl"]
+			@adpll.text = js["unit"][selectedunit]["adpl"]
+			@arpll.text = js["unit"][selectedunit]["arpl"]
+			@mrpll.text = js["unit"][selectedunit]["mrpl"]
+			@aspll.text = js["unit"][selectedunit]["aspl"]
+			@hrpll.text = js["unit"][selectedunit]["hrpl"]
+			@rnamel.text = js["unit"][selectedunit]["rname"]
+			@bresl.text = js["unit"][selectedunit]["bres"]
+			@brrl.text = js["unit"][selectedunit]["brr"]
+			@respll.text = js["unit"][selectedunit]["respl"]
+			@rrpll.text = js["unit"][selectedunit]["rrpl"]
+		end
+
+		
+		
+		
+		
 		
 		@addunitb.click do 
 			js = add_unit @newunitl.text, emptyunit, js
 			templist = update_templist js
-			@unitbox.items = templist
-			@unitbox.choose js["unit"][0]
+			@unitselect.items = templist
+			@unitselect.choose js["unit"][0]
 		end
 		
+		
 		@delunitb.click do
-			js = del_unit @unitbox.text, js
+			js = del_unit @unitselect.text, js
 			templist = update_templist js
-			@unitbox.items = templist
-			@unitbox.choose js["unit"][0]
+			@unitselect.items = templist
+			@unitselect.choose js["unit"][0]
 		end
+		
 		
 		@saveb.click do
 			backup
 			save_changes js
 		end
+		
 	end
 	
 end
