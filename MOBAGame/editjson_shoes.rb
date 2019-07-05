@@ -45,9 +45,7 @@ end
 
 
 def add_unit(name, eu, jf)
-	alert jf.to_s
 	jf["unit"][name] = eu
-	alert "Added unit"
 	return jf
 end
 
