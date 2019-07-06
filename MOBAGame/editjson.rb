@@ -13,21 +13,7 @@ end
 
 
 
-emptyunit = '{
-			"hppl": 50.0,
-			"bhp": 450.0,
-			"bad": 50.0,
-			"adpl": 1.0,
-			"bms": 500.0,
-			"bar": 20.0,
-			"arpl": 0.0,
-			"bas": 100.0,
-			"aspl": 2.0,
-			"bmr": 20.0,
-			"mrpl": 0.0,
-			"bhr": 1.4,
-			"hrpl": 0.1
-		}'
+emptyunit = '{"hppl": 50.0,"bhp": 450.0,"bad": 50.0,"adpl": 1.0,"bms": 500.0,"bar": 20.0,"arpl": 0.0,"bas": 100.0,"aspl": 2.0,"bmr": 20.0,"mrpl": 0.0,"bhr": 1.4,"hrpl": 0.1,"rname": "Mana","bres": 200.0,"brr": 5.0,"respl": 50.0,"rrpl": 0.5}'
 
 commands = {}
 	commands["addunit"] = "1 arg. Creates a new unit with the specified name. Case must match!"

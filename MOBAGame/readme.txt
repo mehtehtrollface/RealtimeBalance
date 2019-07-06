@@ -43,3 +43,15 @@ mrpl - Magic Resist increase Per Level
 bhr - Base Health Regen per second
 
 hrpl - Health Regen increase Per Level
+
+Hero only stats:
+
+rname - Resource name, typically Mana, Energy or Fury. Warning: setting this value through the commandline version will result in a 0!
+
+bres - Base RESource pool
+
+brr - Base Resource Regen per second
+
+respl - RESource pool increase Per Level
+
+rrpl - Resource Regen increase Per Level
