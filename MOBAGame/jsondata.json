@@ -60,25 +60,25 @@
       "respl": 50.0,
       "rrpl": 0.5
     },
-    "Nyeheh": {
-      "hppl": 50.0,
-      "bhp": 250.0,
-      "bad": 50.0,
-      "adpl": 1.0,
-      "bms": 500.0,
-      "bar": 20.0,
-      "arpl": 0.0,
-      "bas": 100.0,
-      "aspl": 2.0,
-      "bmr": 20.0,
-      "mrpl": 0.0,
-      "bhr": 1.4,
-      "hrpl": 0.1,
-      "rname": "Mana",
-      "bres": 200.0,
-      "brr": 5.0,
-      "respl": 50.0,
-      "rrpl": 0.5
+    "RogueSerath": {
+      "hppl": 61.0,
+      "bhp": 500.0,
+      "bad": 61.0,
+      "adpl": 2.0,
+      "bms": 510.0,
+      "bar": 29.0,
+      "arpl": 1.0,
+      "bas": 62.99999999999999,
+      "aspl": 2.1,
+      "bmr": 19.8,
+      "mrpl": 1.2,
+      "bhr": 0.0,
+      "hrpl": 0.0,
+      "rname": "Fury",
+      "bres": 100.0,
+      "brr": 0.0,
+      "respl": 0.0,
+      "rrpl": 0.0
     }
   }
 }

@@ -117,7 +117,7 @@ Shoes.app(title: "MOBAGame Realtime Balance", width: 800, height: 600) do
 			@delunitb = button "Delete unit"
 		end
 		
-		para " "
+		para "Note: In contrast to the code in the project, base values here are actually level 1 values!"
 		
 		flow do 
 			#Base values
@@ -258,12 +258,12 @@ Shoes.app(title: "MOBAGame Realtime Balance", width: 800, height: 600) do
 		@unitselect.change do |selection|
 			selectedunit = selection.text
 			
-			@bhpl.text = js["unit"][selectedunit]["bhp"]
-			@badl.text = js["unit"][selectedunit]["bad"]
-			@barl.text = js["unit"][selectedunit]["bar"]
-			@bmrl.text = js["unit"][selectedunit]["bmr"]
-			@basl.text = js["unit"][selectedunit]["bas"]
-			@bhrl.text = js["unit"][selectedunit]["bhr"]
+			@bhpl.text = js["unit"][selectedunit]["bhp"] + js["unit"][selectedunit]["hppl"]
+			@badl.text = js["unit"][selectedunit]["bad"] + js["unit"][selectedunit]["adpl"]
+			@barl.text = js["unit"][selectedunit]["bar"] + js["unit"][selectedunit]["arpl"]
+			@bmrl.text = js["unit"][selectedunit]["bmr"] + js["unit"][selectedunit]["mrpl"]
+			@basl.text = js["unit"][selectedunit]["bas"] + js["unit"][selectedunit]["aspl"]
+			@bhrl.text = js["unit"][selectedunit]["bhr"] + js["unit"][selectedunit]["hrpl"]
 			@bmsl.text = js["unit"][selectedunit]["bms"]
 			@hppll.text = js["unit"][selectedunit]["hppl"]
 			@adpll.text = js["unit"][selectedunit]["adpl"]
@@ -272,8 +272,8 @@ Shoes.app(title: "MOBAGame Realtime Balance", width: 800, height: 600) do
 			@aspll.text = js["unit"][selectedunit]["aspl"]
 			@hrpll.text = js["unit"][selectedunit]["hrpl"]
 			@rnamel.text = js["unit"][selectedunit]["rname"]
-			@bresl.text = js["unit"][selectedunit]["bres"]
-			@brrl.text = js["unit"][selectedunit]["brr"]
+			@bresl.text = js["unit"][selectedunit]["bres"] + js["unit"][selectedunit]["respl"]
+			@brrl.text = js["unit"][selectedunit]["brr"] + js["unit"][selectedunit]["rrpl"]
 			@respll.text = js["unit"][selectedunit]["respl"]
 			@rrpll.text = js["unit"][selectedunit]["rrpl"]
 			
@@ -287,7 +287,7 @@ Shoes.app(title: "MOBAGame Realtime Balance", width: 800, height: 600) do
 			else
 				@warningpara.text = " "
 			end
-			js["unit"][selectedunit]["bhp"] = tmpf
+			js["unit"][selectedunit]["bhp"] = tmpf - js["unit"][selectedunit]["hppl"]
 		end
 		
 		@badl.change do |block|
@@ -297,7 +297,7 @@ Shoes.app(title: "MOBAGame Realtime Balance", width: 800, height: 600) do
 			else
 				@warningpara.text = " "
 			end
-			js["unit"][selectedunit]["bad"] = tmpf
+			js["unit"][selectedunit]["bad"] = tmpf - js["unit"][selectedunit]["adpl"]
 		end
 		
 		@barl.change do |block|
@@ -307,7 +307,7 @@ Shoes.app(title: "MOBAGame Realtime Balance", width: 800, height: 600) do
 			else
 				@warningpara.text = " "
 			end
-			js["unit"][selectedunit]["bar"] = tmpf
+			js["unit"][selectedunit]["bar"] = tmpf - js["unit"][selectedunit]["arpl"]
 		end
 		
 		@bmrl.change do |block|
@@ -317,7 +317,7 @@ Shoes.app(title: "MOBAGame Realtime Balance", width: 800, height: 600) do
 			else
 				@warningpara.text = " "
 			end
-			js["unit"][selectedunit]["bmr"] = tmpf
+			js["unit"][selectedunit]["bmr"] = tmpf - js["unit"][selectedunit]["mrpl"]
 		end
 		
 		@basl.change do |block|
@@ -327,7 +327,7 @@ Shoes.app(title: "MOBAGame Realtime Balance", width: 800, height: 600) do
 			else
 				@warningpara.text = " "
 			end
-			js["unit"][selectedunit]["bas"] = tmpf
+			js["unit"][selectedunit]["bas"] = tmpf - js["unit"][selectedunit]["aspl"]
 		end
 		
 		@bhrl.change do |block|
@@ -337,7 +337,7 @@ Shoes.app(title: "MOBAGame Realtime Balance", width: 800, height: 600) do
 			else
 				@warningpara.text = " "
 			end
-			js["unit"][selectedunit]["bhr"] = tmpf
+			js["unit"][selectedunit]["bhr"] = tmpf - js["unit"][selectedunit]["hrpl"]
 		end
 		
 		@bmsl.change do |block|
@@ -357,7 +357,9 @@ Shoes.app(title: "MOBAGame Realtime Balance", width: 800, height: 600) do
 			else
 				@warningpara.text = " "
 			end
+			js["unit"][selectedunit]["bhp"] = js["unit"][selectedunit]["bhp"] + js["unit"][selectedunit]["hppl"]
 			js["unit"][selectedunit]["hppl"] = tmpf
+			js["unit"][selectedunit]["bhp"] = js["unit"][selectedunit]["bhp"] - tmpf
 		end
 		
 		@adpll.change do |block|
@@ -367,7 +369,9 @@ Shoes.app(title: "MOBAGame Realtime Balance", width: 800, height: 600) do
 			else
 				@warningpara.text = " "
 			end
+			js["unit"][selectedunit]["bad"] = js["unit"][selectedunit]["bad"] + js["unit"][selectedunit]["adpl"]
 			js["unit"][selectedunit]["adpl"] = tmpf
+			js["unit"][selectedunit]["bad"] = js["unit"][selectedunit]["bad"] - tmpf
 		end
 		
 		@arpll.change do |block|
@@ -377,7 +381,9 @@ Shoes.app(title: "MOBAGame Realtime Balance", width: 800, height: 600) do
 			else
 				@warningpara.text = " "
 			end
+			js["unit"][selectedunit]["bar"] = js["unit"][selectedunit]["bar"] + js["unit"][selectedunit]["arpl"]
 			js["unit"][selectedunit]["arpl"] = tmpf
+			js["unit"][selectedunit]["bar"] = js["unit"][selectedunit]["bar"] - tmpf
 		end
 		
 		@mrpll.change do |block|
@@ -387,7 +393,9 @@ Shoes.app(title: "MOBAGame Realtime Balance", width: 800, height: 600) do
 			else
 				@warningpara.text = " "
 			end
+			js["unit"][selectedunit]["bmr"] = js["unit"][selectedunit]["bmr"] + js["unit"][selectedunit]["mrpl"]
 			js["unit"][selectedunit]["mrpl"] = tmpf
+			js["unit"][selectedunit]["bmr"] = js["unit"][selectedunit]["bmr"] - tmpf
 		end
 		
 		@aspll.change do |block|
@@ -397,7 +405,9 @@ Shoes.app(title: "MOBAGame Realtime Balance", width: 800, height: 600) do
 			else
 				@warningpara.text = " "
 			end
+			js["unit"][selectedunit]["bas"] = js["unit"][selectedunit]["bas"] + js["unit"][selectedunit]["aspl"]
 			js["unit"][selectedunit]["aspl"] = tmpf
+			js["unit"][selectedunit]["bas"] = js["unit"][selectedunit]["bas"] - tmpf
 		end
 		
 		@hrpll.change do |block|
@@ -407,7 +417,9 @@ Shoes.app(title: "MOBAGame Realtime Balance", width: 800, height: 600) do
 			else
 				@warningpara.text = " "
 			end
+			js["unit"][selectedunit]["bhr"] = js["unit"][selectedunit]["bhr"] + js["unit"][selectedunit]["hrpl"]
 			js["unit"][selectedunit]["hrpl"] = tmpf
+			js["unit"][selectedunit]["bhr"] = js["unit"][selectedunit]["bhr"] - tmpf
 		end
 		
 		@rnamel.change do |block|
@@ -422,7 +434,7 @@ Shoes.app(title: "MOBAGame Realtime Balance", width: 800, height: 600) do
 			else
 				@warningpara.text = " "
 			end
-			js["unit"][selectedunit]["bres"] = tmpf
+			js["unit"][selectedunit]["bres"] = tmpf - js["unit"][selectedunit]["respl"]
 		end
 		
 		@brrl.change do |block|
@@ -432,7 +444,7 @@ Shoes.app(title: "MOBAGame Realtime Balance", width: 800, height: 600) do
 			else
 				@warningpara.text = " "
 			end
-			js["unit"][selectedunit]["brr"] = tmpf
+			js["unit"][selectedunit]["brr"] = tmpf - js["unit"][selectedunit]["rrpl"]
 		end
 		
 		@respll.change do |block|
@@ -442,7 +454,9 @@ Shoes.app(title: "MOBAGame Realtime Balance", width: 800, height: 600) do
 			else
 				@warningpara.text = " "
 			end
+			js["unit"][selectedunit]["bres"] = js["unit"][selectedunit]["bres"] + js["unit"][selectedunit]["respl"]
 			js["unit"][selectedunit]["respl"] = tmpf
+			js["unit"][selectedunit]["bres"] = js["unit"][selectedunit]["bres"] - tmpf
 		end
 		
 		@rrpll.change do |block|
@@ -452,7 +466,9 @@ Shoes.app(title: "MOBAGame Realtime Balance", width: 800, height: 600) do
 			else
 				@warningpara.text = " "
 			end
+			js["unit"][selectedunit]["brr"] = js["unit"][selectedunit]["brr"] + js["unit"][selectedunit]["rrpl"]
 			js["unit"][selectedunit]["rrpl"] = tmpf
+			js["unit"][selectedunit]["brr"] = js["unit"][selectedunit]["brr"] - tmpf
 		end
 		
 		
