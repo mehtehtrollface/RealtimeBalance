@@ -79,6 +79,26 @@
       "brr": 0.0,
       "respl": 0.0,
       "rrpl": 0.0
+    },
+    "MorigeshTest": {
+      "hppl": 65.0,
+      "bhp": 385.0,
+      "bad": 50.0,
+      "adpl": 1.0,
+      "bms": 500.0,
+      "bar": 31.0,
+      "arpl": 1.0,
+      "bas": 57.0,
+      "aspl": 3.0,
+      "bmr": 24.5,
+      "mrpl": 0.5,
+      "bhr": 1.0999999999999999,
+      "hrpl": 0.1,
+      "rname": "Mana",
+      "bres": 215.0,
+      "brr": 0.8,
+      "respl": 65.0,
+      "rrpl": 0.2
     }
   }
 }

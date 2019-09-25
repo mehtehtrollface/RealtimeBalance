@@ -497,6 +497,17 @@ Shoes.app(title: "MOBAGame Realtime Balance", width: 800, height: 600) do
 		
 	end
 	
+	
+	
+	#Abilities
+	#-----------------------------------------------------------
+	
+	
+	
+	
+	
+	
+	
 end
 
 
