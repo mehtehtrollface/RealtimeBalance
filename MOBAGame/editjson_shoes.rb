@@ -819,7 +819,7 @@ Shoes.app(title: "MOBAGame Realtime Balance", width: 800, height: 600) do
 			@bval1pl.text = js["ability"][selectedability]["bval1pl"]
 			@bval2.text = js["ability"][selectedability]["bval2"] + js["ability"][selectedability]["bval2pl"]
 			@bval2pl.text = js["ability"][selectedability]["bval2pl"]
-			@rescost.text = js["ability"][selectedability]["rescost"] + js["ability"][selectedability]["rescostpl"]
+			@rescost.text = js["ability"][selectedability]["rescost"]
 			@rescostpl.text = js["ability"][selectedability]["rescostpl"]
 			@basecd.text = js["ability"][selectedability]["basecd"]
 			@cdpl.text = js["ability"][selectedability]["cdpl"]
