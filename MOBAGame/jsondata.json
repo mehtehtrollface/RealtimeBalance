@@ -100,5 +100,25 @@
       "respl": 65.0,
       "rrpl": 0.2
     }
+  },
+  "ability": {
+    "Ab_DMCountess_Tide": {
+      "bval1": 10.0,
+      "bval2": 0.0,
+      "bval1pl": 40.0,
+      "bval2pl": 0.0,
+      "ratio1": 0.8,
+      "ratio2": 0.4,
+      "basecd": 8.0,
+      "cdpl": -1.0,
+      "rescost": 70.0,
+      "rescostpl": -5.0,
+      "recasts": 0,
+      "recastcost": 0.0,
+      "recastcd": 0.0,
+      "recastto": 0.0,
+      "ratio1type": "ap",
+      "ratio2type": "ad"
+    }
   }
 }
