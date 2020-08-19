@@ -933,7 +933,7 @@ Shoes.app(title: "MOBAGame Realtime Balance", width: 800, height: 600) do
 			js = add_ability @newabilityl.text, emptyability, js
 			templistab = update_templist_ability js
 			@abilityselect.items = templistab
-			@abilityselect.choose js["ability"][0]
+			@abilityselect.choose @newabilityl.text
 		end
 		
 		@savebab.click do
