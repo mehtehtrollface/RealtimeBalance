@@ -167,7 +167,7 @@
       "bval2pl": 0.0,
       "ratio1": 0.0,
       "ratio2": 0.0,
-      "basecd": 5.0,
+      "basecd": 300.0,
       "cdpl": 0.0,
       "rescost": 0.0,
       "rescostpl": 0.0,
@@ -176,7 +176,7 @@
       "recastcd": 0.0,
       "recastto": 0.0,
       "ratio1type": "ap",
-      "ratio2type": "ad"
+      "ratio2type": "ap"
     },
     "Ab_Binding_Blink_DM": {
       "bval1": 0.0,
@@ -185,7 +185,7 @@
       "bval2pl": 0.0,
       "ratio1": 0.0,
       "ratio2": 0.0,
-      "basecd": 5.0,
+      "basecd": 8.0,
       "cdpl": 0.0,
       "rescost": 0.0,
       "rescostpl": 0.0,
