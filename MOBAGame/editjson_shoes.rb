@@ -29,7 +29,7 @@ end
 
 
 emptyunit = JSON.parse('{"hppl": 50.0,"bhp": 450.0,"bad": 50.0,"adpl": 1.0,"bms": 500.0,"bar": 20.0,"arpl": 0.0,"bas": 100.0,"aspl": 2.0,"bmr": 20.0,"mrpl": 0.0,"bhr": 1.4,"hrpl": 0.1,"rname": "Mana","bres": 200.0,"brr": 5.0,"respl": 50.0,"rrpl": 0.5}')
-emptyability = JSON.parse('{"bval1": 0.0,"bval2": 0.0,"bval1pl": 0.0,"bval2pl": 0.0,"ratio1": 0.0,"ratio2": 0.0,"basecd": 10.0,"cdpl": 0.0,"rescost": 0.0,"rescostpl": 0.0,"recasts": 0,"recastcost": 0.0,"recastcd": 0.0,"recastto": 0.0,"ratio1type": "ap","ratio2type": "ad"}')
+emptyability = JSON.parse('{"bval1": 0.0,"bval2": 0.0,"bval1pl": 0.0,"bval2pl": 0.0,"ratio1": 0.0,"ratio2": 0.0,"basecd": 10.0,"cdpl": 0.0,"rescost": 0.0,"rescostpl": 0.0,"recasts": 0,"recastcost": 0.0,"recastcd": 0.0,"recastto": 0.0,"ratio1type": "ap","ratio2type": "bad"}')
 	
 	
 	
@@ -555,6 +555,8 @@ Shoes.app(title: "MOBAGame Realtime Balance", width: 800, height: 600) do
 			@abilityselect = list_box items: templistab, height: 20
 			@delabilityb = button "Delete ability"
 		end
+		
+		para "Note: In contrast to the code in the project, base values here are actually level 1 values!"
 		
 		flow do 
 			stack(width:300) do
