@@ -228,7 +228,7 @@
       "recasts": 1,
       "recastcost": 0.0,
       "recastcd": 0.5,
-      "recastto": 1.0,
+      "recastto": 1.5,
       "ratio1type": "ap",
       "ratio2type": "bad"
     },
